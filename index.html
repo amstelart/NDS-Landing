@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="no-js page" lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>NDS</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png"> -->
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png"> -->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <link href="css/style.min.css" rel="stylesheet" media="screen">
+
+  <script>
+    // Маркер работающего javascript
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    document.addEventListener('DOMContentLoaded', function(){
+      if (window.isMobile !== undefined) {
+        // console.log(isMobile);
+        if(isMobile.any) {
+          var rootClasses = ' is-mobile';
+          for (key in isMobile) {
+            if(typeof isMobile[key] === 'boolean' && isMobile[key] && key !== 'any') rootClasses += ' is-mobile--'+key;
+            if(typeof isMobile[key] === 'object' && key !== 'other') {
+              for (type in isMobile[key]) {
+                if(isMobile[key][type]) rootClasses += ' is-mobile--'+key+'-'+type;
+              }
+            }
+          }
+          document.documentElement.className += rootClasses;
+        }
+      }
+      else {
+        console.log('Классы для мобильных не добавлены: в сборке отсутствует isMobile.js');
+      }
+    });
+
+  </script>
+
+</head>
+
+<body>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+
+      <header class="page-header" role="banner">
+        <div class="page-header__inner">
+          <a class="logo" href="#">
+            <img src="img/logo-white.png" alt="">
+          </a>
+          <nav id="main-nav" class="main-nav" role="navigation">
+            <ul class="main-nav__list">
+              <li class="main-nav__item">
+                <a href="#" class="main-nav__link">
+                  Преимущества
+                </a>
+              </li>
+              <li class="main-nav__item">
+                <a href="#" class="main-nav__link">
+                  Услуги
+                </a>
+              </li>
+              <li class="main-nav__item">
+                <a href="#" class="main-nav__link">
+                  Результат
+                </a>
+              </li>
+              <li class="main-nav__item">
+                <a href="#" class="main-nav__link">
+                  Наши цены
+                </a>
+              </li>
+            </ul>
+            <div class="main-nav__info">
+              <a href="#"><svg width="18" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#telegram-icon"></use></svg>+7 (999) 000-0000</a><br><span>Задайте вопрос в чат</span>
+            </div>
+            <button id="main-nav-toggler" class="main-nav__toggler  burger"><span></span></button>
+          </nav>
+        </div>
+      </header>
+
+
+      <main class="page__main" role="main">
+
+        <section class="section intro" style="background-image: url('img/intro-bg.jpg');">
+          <div class="section__inner">
+            <div class="intro__caption">
+              <h1 class="intro__title">Уменьшение НДС в деклорации</h1>
+              <ul class="intro__list">
+                <li>Оптимизация<br> НДС</li>
+                <li>Все регионы<br> России</li>
+                <li>Особые условия<br> для посредников</li>
+                <li>Действуем<br> в рамках закона</li>
+              </ul>
+            </div>
+            <div class="intro__form-wrap">
+              <div class="intro__form-header">
+                <h3>Заказать обратный звонок</h3>
+              </div>
+              <form action="" class="intro__form">
+                <label class="field-text">
+                  <span class="field-text__name">Ваше имя</span>
+                  <span class="field-text__input-wrap">
+                    <input class="field-text__input" type="text" placeholder="Ваше имя" id="" name="">
+                  </span>
+                </label>
+                <label class="field-text">
+                  <span class="field-text__name">Электронная почта</span>
+                  <span class="field-text__input-wrap">
+                    <input class="field-text__input" type="text" placeholder="Ваше имя" id="" name="">
+                  </span>
+                </label>
+                <label class="field-text">
+                  <span class="field-text__name">Электронная почта</span>
+                  <span class="field-text__input-wrap">
+                    <input class="field-text__input" type="text" placeholder="Ваше имя" id="" name="">
+                  </span>
+                </label>
+                <button class="btn" type="submit">Отправить</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="section advantages">
+          <div class="section__inner">
+            <h2 class="section__title">Преимущества</h2>
+          </div>
+        </section>
+
+        <section class="section services">
+          <div class="section__inner">
+            <h2 class="section__title">Услуги</h2>
+
+            <div class="services__card-group">
+              <div class="services-card">
+                <div class="services-card__inner">
+                  <div class="services-card__header">
+                    <h4>Уменьшим НДС к выплате</h4>
+                  </div>
+                  <div class="services-card__body">
+                    <p>Уменьшим НДС к выплате в декларации сдаваемой в ИФНС, закроем суммы НДС, которые у вас не проходят из-за теневых контрагентов</p>
+                  </div>
+                  <div class="services-card__footer">
+                    <a class="btn btn--outline" href="#">Оставить заявку</a>
+                  </div>
+                </div>
+              </div>
+              <div class="services-card">
+                <div class="services-card__inner">
+                  <div class="services-card__header">
+                    <h4>Корректировка и уточнение по прошлым отчетным периодам</h4>
+                  </div>
+                  <div class="services-card__body">
+                    <p>Подготовим и сдадим корректировочные декларации по прошлым периодам.</p>
+                  </div>
+                  <div class="services-card__footer">
+                    <a class="btn btn--outline" href="#">Получить расчёт</a>
+                  </div>
+                </div>
+              </div>
+              <div class="services-card">
+                <div class="services-card__inner">
+                  <div class="services-card__header">
+                    <h4>Подтвердим документами и отчитаемся в ИФНС</h4>
+                  </div>
+                  <div class="services-card__body">
+                    <p>Вышлем полный комплект подтвержждающих документов, а также документы подтверждающие сдачу декларации в ИФНС, при встречной проверке подтвердим сделку.</p>
+                  </div>
+                  <div class="services-card__footer">
+                    <a class="btn btn--outline" href="#">Получить расчёт</a>
+                  </div>
+                </div>
+              </div>
+              <p>Закажите подбор схемы уменьшения ндс прямо сейчас – <br>НЕ ЖДИ ОКОНЧАНИЯ КВАРТАЛА</p>
+            </div>
+
+            <div class="services__list">
+              <div class="services__list-group">
+                <div class="services__list-item">
+                  <h4>Индивидуальный <br>подход</h3>
+                  <p>Мы разрабатываем индивидуальное решение<br> подходящее под Ваши требования и задачи</p>
+                </div>
+                <div class="services__list-item">
+                  <h4>Удобные условия<br> оплаты</h3>
+                  <p>Оплата осуществляется после передачи первичных документов вам и факта сдачи деклараций. Оплата осуществляется после передачи первичных документов вам и факта сдачи деклараций</p>
+                </div>
+              </div>
+              <div class="services__list-group">
+                <div class="services__list-item">
+                  <h4>Действуем<br> в рамках закона</h3>
+                  <p>Все действия производятся в рамках<br> действующего законодательства</p>
+                </div>
+                <div class="services__list-item">
+                  <h4>Честные<br> компании</h3>
+                  <p>В работе используем только работающие компании с директором и офисом, сдающие ежеквартальную отчётность в ИФНС и оплачивающие налоги в соответствии с налоговым законодательством</p>
+                </div>
+              </div>
+              <div class="services__list-group">
+                <div class="services__list-item">
+                  <h4>Не занимаемся<br> обналичкой</h3>
+                  <p>Мы не занимаемся обналом и не используем мошеннические схемы. Уменьшение НДС производитося с учётом положения Главы 21 Налового Кодекса РФ</p>
+                </div>
+                <div class="services__list-item">
+                  <h4>Уменьшение НДС<br> предыдущих периодов</h3>
+                  <p>По согласованию сдаем уточнение по НДС за предыдущие<br> налоговые периоды и уменьшаем НДС к выплате</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section result">
+          <div class="section__inner">
+            <h2 class="section__title">Результат</h2>
+          </div>
+        </section>
+
+        <section class="section prices" style="background-image: url('img/prices-bg.jpg');">
+          <div class="section__inner">
+            <h2 class="section__title">Наши цены</h2>
+            <div class="prices__list-wrap">
+              <div class="prices__list">
+                <div class="prices__list-item head">
+                  <div class="item item--head">Сумма (руб.)</div>
+                  <div class="item item--head">Стоимость %</div>
+                </div>
+                <div class="prices__list-item">
+                  <div class="item item--value">до 300 000</div>
+                  <div class="item item--action"><a href="#">Получить расчет</a></div>
+                </div>
+                <div class="prices__list-item">
+                  <div class="item item--value">От 300 000 – 1 000 000</div>
+                  <div class="item item--action"><a href="#">Получить расчет</a></div>
+                </div>
+                <div class="prices__list-item">
+                  <div class="item item--value">От 1 000 000 – 3 000 000</div>
+                  <div class="item item--action"><a href="#">Получить расчет</a></div>
+                </div>
+                <div class="prices__list-item">
+                  <div class="item item--value">От 1 000 000 – 3 000 000</div>
+                  <div class="item item--action"><a href="#">Получить расчет</a></div>
+                </div>
+                <div class="prices__list-item">
+                  <div class="item item--value">От 3 000 000 – 5 000 000</div>
+                  <div class="item item--action"><a href="#">Получить расчет</a></div>
+                </div>
+                <div class="prices__list-item">
+                  <div class="item item--value">От 5 000 000 – 15 000 000</div>
+                  <div class="item item--action"><a href="#">Получить расчет</a></div>
+                </div>
+                <div class="prices__list-item">
+                  <div class="item item--value">От 15 000 000 – 30 000 000</div>
+                  <div class="item item--action"><a href="#">Получить расчет</a></div>
+                </div>
+                <div class="prices__list-item">
+                  <div class="item item--value">От 30 000 000</div>
+                  <div class="item item--action"><a href="#">Получить расчет</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section contacts">
+          <div class="section__inner">
+
+          </div>
+        </section>
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+
+      <footer class="page-footer" role="contentinfo">
+        <div class="page-footer__inner">
+          <p>У вас остались вопросы?  Напишите нам!</p>
+          <button class="btn">Оставить заявку</button>
+        </div>
+      </footer>
+
+    </div>
+
+  </div>
+  <script src="js/script.min.js"></script>
+
+</body>
+</html>
