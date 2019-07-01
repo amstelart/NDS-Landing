@@ -5,4 +5,76 @@
 .page-header {
 
   $block-name:                &; // #{$block-name}__element
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 20px 0 20px 0;
+
+  @media (min-width: $screen-xxl) {
+    padding: 60px 0 30px 0;
+  }
+
+  @media (max-width: ($menu-desktop-width - 1)) {
+    padding: 8px 0;
+    background: #2b2b2b;
+  }
+
+  &__inner {
+    @include container;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    margin-right: 50px;
+
+    @media (max-width: ($screen-md - 1)) {
+      margin-right: 15px;
+      max-width: 50px;
+    }
+  }
+
+  &--sticky {
+    background-color: #2b2b2b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    opacity: 1;
+    z-index: 10;
+    padding: 5px 0 !important;
+    animation: slideInDown 1s 1 ease-in-out;
+
+    .main-nav {
+      align-items: center;
+    }
+
+    .main-nav__info span {
+      position: static;
+    }
+
+    .logo {
+      margin-right: 25px;
+      max-width: 50px;
+    }
+
+    .burger {
+      align-self: flex-start;
+    }
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
 }

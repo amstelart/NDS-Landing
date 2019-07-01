@@ -21,8 +21,48 @@ $transition-time:             0.3s !default;
 
   $block-name:                &; // #{$block-name}__element
 
-  position: relative;
   z-index: 10;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-start;
+
+  &__info {
+
+    text-align: right;
+    margin-left: auto;
+    position: relative;
+    white-space: nowrap;
+
+    svg {
+      margin-right: 10px;
+      margin-bottom: 5px;
+      vertical-align: middle;
+    }
+
+    a {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.1;
+      color: #fff;
+      text-decoration: none;
+
+      @media (max-width: ($screen-md - 1)) {
+        font-size: 15px;
+      }
+    }
+
+    span {
+      color: #fff;
+      opacity: 0.7;
+      position: absolute;
+      right: 0;
+      top: 100%;
+
+      @media (max-width: ($screen-md - 1)) {
+        font-size: 12px;
+      }
+    }
+  }
 
   // первый уровень
   &__list {
@@ -34,16 +74,39 @@ $transition-time:             0.3s !default;
     @media (max-width: ($menu-desktop-width - 1)) {
 
       // открытие/закрытие меню только в случае работающего JS
+      // display: none;
 
       .js & {
+        display: none;
         overflow: hidden;
         max-height: 0;
         transition: max-height 0.2s;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        background: #444;
+        padding: 15px;
       }
 
       .js #{$block-name}--open & {
+        display: block;
         max-height: 100vh;
         transition: max-height 0.6s;
+      }
+
+      #{$block-name}__item {
+        margin-bottom: 5px;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid lighten(#444, 7%);
+        }
+      }
+
+      #{$block-name}__link {
+        padding: 10px 0;
+        text-transform: uppercase;
       }
     }
 
@@ -51,96 +114,57 @@ $transition-time:             0.3s !default;
     @media (min-width: $menu-desktop-width) {
       display: flex;
       flex-wrap: wrap;
+      margin-right: auto;
+
+      #{$block-name}__link {
+
+        &:after {
+          content: "";
+          display: block;
+          height: 2px;
+          background: transparent;
+          position: relative;
+          top: 0;
+          transition: all $transition-time;
+        }
+
+        &.active {
+
+          &:after {
+            content: "";
+            display: block;
+            height: 2px;
+            background: $color-main;
+            position: relative;
+            top: 5px;
+          }
+        }
+      }
     }
   }
 
   &__item {
     position: relative;
-
-    &--active {
-
-      & > #{$block-name}__link {
-        color: #000;
-      }
-    }
   }
 
   &__link {
     display: block;
-    padding: 0.5em;
+    padding: 0 0.5em;
+    line-height: 1.1;
     text-decoration: none;
-    background-color: #fff;
+    color: #fff;
+    opacity: 0.85;
+    font-size: 16px;
+
+    @media (min-width: $screen-xl) {
+      font-size: 18px;
+    }
 
     &:hover,
     &:focus {
       text-decoration: none;
-      background-color: $gray-lightest;
-    }
-
-    &--lvl-2 {
-
-      @media (max-width: ($menu-desktop-width - 1)) {
-        padding-left: 1.2em;
-      }
-    }
-
-    &--lvl-3 {
-
-      @media (max-width: ($menu-desktop-width - 1)) {
-        padding-left: 2.4em;
-      }
     }
   }
-
-  &__sublist-wrapper {
-
-    &--lvl-2 {
-
-      @media (min-width: $menu-desktop-width) {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 1;
-        opacity: 0;
-        height: 0;
-        overflow: hidden;
-        transition: opacity $transition-time;
-
-        // stylelint-disable  max-nesting-depth
-        #{$block-name}__item--show-child > &,
-        #{$block-name}__item:hover & {
-          opacity: 1;
-          height: auto;
-          overflow: visible;
-        }
-        // stylelint-enable
-      }
-    }
-
-    &--lvl-3 {
-
-      @media (min-width: $menu-desktop-width) {
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 100%;
-        opacity: 0;
-        height: 0;
-        overflow: hidden;
-        transition: opacity $transition-time;
-
-        // stylelint-disable  max-nesting-depth
-        #{$block-name}__item--show-child > &,
-        #{$block-name}__item--lvl-2:hover & {
-          opacity: 1;
-          height: auto;
-          overflow: visible;
-        }
-        // stylelint-enable
-      }
-    }
-  }
-
 
 
   // переключатель
