@@ -633,7 +633,7 @@ img {
     position: relative;
     counter-reset: result-counter;
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-xl) {
       background-color: #F9F8F8;
       width: 798px;
       height: 798px;
@@ -645,9 +645,10 @@ img {
       box-shadow: 0px 0px 0px 400px #FCFBFB, 5px 5px 15px 5px rgba(0,0,0,0);
     }
 
-    @media (max-width: ($screen-lg - 1)) {
+    @media (max-width: ($screen-xl - 1)) {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
     }
   }
 
@@ -715,23 +716,23 @@ img {
     }
 
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-xl) {
 
       &.first {
-        max-width: 350px;
+        max-width: 335px;
         text-align: right;
-        left: -35%;
-        top: 30px;
+        left: -222px;
+        top: 25px;
       }
 
       &.second {
         max-width: 229px;
-        right: -20%;
+        right: -110px;
         top: 30px;
       }
 
       &.third {
-        left: -15%;
+        left: -75px;
         bottom: 30px;
         max-width: 188px;
         text-align: right;
@@ -739,8 +740,35 @@ img {
 
       &.fourth {
         max-width: 225px;
-        right: -19.5%;
+        right: -110px;
         bottom: 30px;
+      }
+    }
+
+    @media only screen and (max-width: ($screen-xl - 1)) and (min-width: $screen-lg)  {
+
+      max-width: 27%;
+
+      &.first {
+        text-align: right;
+        left: 0;
+        top: 0;
+      }
+
+      &.second {
+        right: 0;
+        top: 0;
+      }
+
+      &.third {
+        left: 0;
+        bottom: -30px;
+        text-align: right;
+      }
+
+      &.fourth {
+        right: 0;
+        bottom: -30px;
       }
     }
   }
@@ -752,6 +780,11 @@ img {
     box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.2);
     background-color: #ffffff;
     padding: 30px 60px;
+
+    @media only screen and (max-width: ($screen-xl - 1)) and (min-width: $screen-lg)  {
+      width: 360px;
+      padding: 25px;
+    }
 
     @media (max-width: ($screen-lg - 1)) {
       margin: auto;
